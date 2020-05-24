@@ -3,15 +3,12 @@
 		<h1>Задачи</h1>
 		<div>
 		</div>
-		
-
 		<todo></todo>
 	</div>
 </template>
 
 <script>
 import { db } from "@/main";
-
 import todo from "./Todo";
 export default {
 	components: {

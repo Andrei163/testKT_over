@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import TodoList from '../components/TodoList';
 import edit from '../components/edit';
+import Todo from '../components/Todo';
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
 		name: "edit",
 		component: edit,
 		props: true
+	},
+	{
+		path: "/page/:id",
+		name: "page",
+		component: Todo
 	}
 ];
 

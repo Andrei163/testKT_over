@@ -1,17 +1,17 @@
 <template>
-  <div class="body">
-<form class="todo-form" @submit.prevent="addTodo(title), getPosts()">
-    <input
-      v-model="title"
-      class="newtask"
-      type="text"
-      id="newtask"
-      placeholder="Enter a title for this card"
-      required
-    />
-    <button class="btnAdd" type="submit">Add Card</button>
-  </form>
-
+  <div>
+	  <h1>Задачи</h1>
+    <form class="todo-form" @submit.prevent="addTodo(title), getPosts()">
+      <input
+        v-model="title"
+        class="newtask"
+        type="text"
+        id="newtask"
+        placeholder="Enter a title for this card"
+        required
+      />
+      <button class="btnAdd" type="submit">Add Card</button>
+    </form>
 
     <ul class="tasklist">
       <li v-for="(task, index) of displayedPosts" :key="index">
@@ -55,7 +55,7 @@ export default {
       postsArr: [],
       page: 1,
       perPage: 10,
-	  pages: []
+      pages: []
     };
   },
 
@@ -69,11 +69,11 @@ export default {
   },
 
   methods: {
-	   addTodo(title) {
+    addTodo(title) {
       const createdAt = new Date();
       db.collection("testTask").add({ title, createdAt });
       this.title = "";
-    //   this.$router.push("/");
+      //   this.$router.push("/");
     },
     getPosts() {
       this.pages = [];
@@ -97,7 +97,7 @@ export default {
               index: i
             });
           }
-		  this.posts = posts;
+          this.posts = posts;
         });
     },
     removeTask(id) {
@@ -121,14 +121,11 @@ export default {
     }
   },
   watch: {
-  
-
     posts() {
-		// this.getPosts();
+      // this.getPosts();
       this.setPages();
     }
-  },
-
+  }
 };
 </script>
 
