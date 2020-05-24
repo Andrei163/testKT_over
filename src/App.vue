@@ -1,15 +1,14 @@
 <template>
 	<div class="body">
-		<todo></todo>
+		
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-import todo from "./components/TodoList";
+
 export default {
-	components: {
-		todo
-	}
+	
 };
 </script>
 

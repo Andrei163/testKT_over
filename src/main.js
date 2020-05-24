@@ -7,6 +7,7 @@ import { firestorePlugin } from "vuefire";
 import firebase from "firebase/app";
 import "firebase/firestore";
 
+
 Vue.config.productionTip = false;
 Vue.component("paginate", Paginate);
 

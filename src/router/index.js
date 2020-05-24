@@ -1,13 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import TodoList from '../components/TodoList';
+import edit from '../components/edit';
 
 Vue.use(VueRouter);
 
 const routes = [
+
+	{
+		path: "/",
+		name: "TodoList",
+		component: TodoList
+	},
+
+
 	{
 		path: "/edit/:id",
 		name: "edit",
-		component: () => import("@/components/edit")
+		component: edit,
+		props: true
 	}
 ];
 
