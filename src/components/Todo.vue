@@ -1,6 +1,5 @@
 <template>
   <div>
-	  <h1>Задачи</h1>
     <form class="todo-form" @submit.prevent="addTodo(title), getPosts()">
       <input
         v-model="title"
@@ -13,7 +12,7 @@
       <button class="btnAdd" type="submit">Add Card</button>
     </form>
 
-    <ul class="tasklist">
+    <ul class="tasklist" v-if='displayedPosts.length'>
       <li v-for="(task, index) of displayedPosts" :key="index">
         {{ task.index + 1 }}) {{ task.title }}
         <div>
@@ -22,6 +21,7 @@
         </div>
       </li>
     </ul>
+	<div v-else>Loading...</div>
 
     <nav class="navigation">
       <ul class="pagination">
@@ -125,6 +125,11 @@ export default {
       // this.getPosts();
       this.setPages();
     }
+  },
+  mounted: function() {
+    window.setInterval(() => {
+      this.getPosts();
+    }, 10000);
   }
 };
 </script>
